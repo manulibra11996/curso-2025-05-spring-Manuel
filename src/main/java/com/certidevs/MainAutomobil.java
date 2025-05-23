@@ -32,31 +32,31 @@ public class MainAutomobil {
 
         //Un método derivado para buscar automóviles con caballos mayor que un valor
         Integer caballosMinimos = 200;
-        List<Automobil> automobilesCaballo = automobilRepository.findByCaballosGreaterThan(Integer caballosMinimos);
+        List<Automobil> automobilesCaballo = automobilRepository.findByCaballosGreaterThan(caballosMinimos);
         for(Automobil automobilCaballos : automobilesCaballo){
-            automobilCaballos.toString();
+            System.out.println(automobilCaballos.toString());
         }
 
         //Un método derivado para encontrar automóviles por modelo ignorando mayúsculas y minúsculas
         String modeloAutomobil = "PANDA";
-        List<Automobil> automobilesModelo =  automobilRepository.findByModeloIgnoreCase(String modeloAutomobil);
+        List<Automobil> automobilesModelo =  automobilRepository.findByModeloIgnoreCase(modeloAutomobil);
         for(Automobil automobilModelos : automobilesModelo){
-            automobilModelos.toString();
+            System.out.println(automobilModelos.toString());
         }
 
         //Un método derivado para encontrar automóviles según si son eléctricos o no
         Boolean electricidadAutomobil = Boolean.FALSE;
-        List<Automobil> automobilesElectricidad =  automobilRepository.findByElectrico(Boolean electricidadAutomobil);
+        List<Automobil> automobilesElectricidad =  automobilRepository.findByElectrico(electricidadAutomobil);
         for(Automobil automobilElectricos : automobilesElectricidad){
-            automobilElectricos.toString();
+            System.out.println(automobilElectricos.toString());
         }
 
         //Una consulta JPQL que encuentre todos los automóviles en un rango entre dos precios
         Double precioMenor = 50.0;
         Double precioMayor = 500.0;
-        List<Automobil> automobilesPrecio =  automobilRepository.findByPrecioBetween(Double precioMenor, Double precioMayor);
+        List<Automobil> automobilesPrecio =  automobilRepository.findByPrecioBetween(precioMenor, precioMayor);
         for(Automobil automobilPrecios : automobilesPrecio){
-            automobilPrecios.toString();
+            System.out.println(automobilPrecios.toString());
         }
     }
 }
